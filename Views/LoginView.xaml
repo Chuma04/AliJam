@@ -4,11 +4,24 @@
              xmlns:viewModels="clr-namespace:AliJam.ViewModels;assembly=AliJam"
              x:DataType="viewModels:LoginViewModel"
              x:Class="AliJam.Views.LoginView"
-             Title="LoginView">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="LoginView"
+             Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="2*,*,2*" Padding="10,30">
+        <VerticalStackLayout Grid.Row="0" VerticalOptions="End">
+            <Label Text="Sign in" FontSize="42" FontAttributes="Bold" Margin="0,40" HorizontalOptions="Center" />
+            <Label Text="Sign in to access the system" Padding="8,0" FontSize="15" />
+        </VerticalStackLayout>
+        <VerticalStackLayout Grid.Row="1" VerticalOptions="Center" Spacing="20">
+            <Frame CornerRadius="10" BorderColor="LightGrey"  Padding="8,1">
+                <Entry Text="{Binding UserLoginModel.Email}" Placeholder="Email"  />
+            </Frame>
+            <Frame CornerRadius="10" BorderColor="LightGrey"  Padding="8,1">
+                <Entry Text="{Binding UserLoginModel.Password}" Placeholder="Password" IsPassword="True" />
+            </Frame>
+        </VerticalStackLayout>
+        <VerticalStackLayout Grid.Row="2">
+            <Button Text="Login" Command="{Binding LoginCommand}" />
+        </VerticalStackLayout>
+    </Grid>
 </ContentPage>

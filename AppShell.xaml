@@ -5,10 +5,31 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:AliJam.Views"
     Shell.FlyoutBehavior="Disabled">
+ 
+    <TabBar>
+        <Tab Title="Utilities"
+            Icon="paw.png">
+            <ShellContent Title="Transactions"
+                         ContentTemplate="{DataTemplate local:TransactionsView}" />
+            <ShellContent Title="Balance"
+                         ContentTemplate="{DataTemplate local:BalanceView}" />
+           
+        </Tab>
+        
+        <Tab Title="Settings"
+            Icon="monkey.png">
+            <ShellContent Title="Details" ContentTemplate="{DataTemplate local:SettingsView}" />
+            <ShellContent Title="My reports" ContentTemplate="{DataTemplate local:SettingsView}" />
+        </Tab>
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        <Tab Title="Users"
+            Icon="monkey.png">
+            <ShellContent Title="Users"
+                         ContentTemplate="{DataTemplate local:TransactionsView}" />
+            <ShellContent Title="User reports"
+                          ContentTemplate="{DataTemplate local:UsersView}" />
+        </Tab>
+
+    </TabBar>
 
 </Shell>

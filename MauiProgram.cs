@@ -1,5 +1,7 @@
 ﻿global using AliJam.ViewModels;
 global using AliJam.Views;
+global using AliJam.Models;
+global using CommunityToolkit.Mvvm.ComponentModel;
 using Microsoft.Extensions.Logging;
 using CommunityToolkit.Maui;
 

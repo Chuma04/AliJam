@@ -1,5 +1,5 @@
-﻿namespace AliJam.Views;
-using AliJam.ViewModels;
+﻿global using AliJam.ViewModels;
+namespace AliJam.Views;
 
 public partial class MainPage : ContentPage
 {
